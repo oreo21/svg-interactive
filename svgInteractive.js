@@ -28,7 +28,7 @@ var replaceCircle = function(e){
   clickedTarget.parentNode.removeChild(clickedTarget);
   var x = Math.random() * (frame.clientWidth - 50) + 25;
   var y = Math.random() * (frame.clientHeight - 50) + 25;
-  createCircle(x, y, 20);
+  createCircle(x, y, 30);
   e.stopPropagation();
 };
 
@@ -53,7 +53,7 @@ var moveStuff = function(e){
       if (y + r > frame.clientHeight || y - r < 0) vy *= -1;
       x += vx, y += vy;
       c.setAttribute("cx", x), c.setAttribute("cy", y);
-      c.setAttribute("vx", vx),c.setAttribute("vy", vy);
+      c.setAttribute("vx", vx), c.setAttribute("vy", vy);
       if (y == frame.clientHeight / 2){
         frame.removeChild(c);
         var c1 = createCircle(x, y, r / 2);
